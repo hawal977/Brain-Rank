@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BrainRank</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="title">
+      <span class="icon">🧠</span>
+      <h1>BrainRank</h1>
+      <span class="rankIcon" id="headerRankIcon">🥉</span>
+    </div>
+    <p class="tagline">Training your brain</p>
+    <p class="note">Don’t check calculator – think fast and smart</p>
+    <p class="streak">🔥 Streak: <span id="streak">0</span> days</p>
+  </div>
+
+  <!-- STATUS -->
+  <div class="status">
+    <div>Rank: <b id="rank">Rookie</b></div>
+    <div>Level: <b id="level">1</b></div>
+    <div>Score: <b id="score">0</b></div>
+    <div>Time: <b id="time">20</b>s</div>
+  </div>
+
+  <!-- CHALLENGE & QUESTION -->
+  <div class="questionBox">
+    <p id="challengeText" class="challenge"></p>
+    <h2 id="question">Loading question...</h2>
+    <div class="answers">
+      <button id="btn0"></button>
+      <button id="btn1"></button>
+      <button id="btn2"></button>
+      <button id="btn3"></button>
+    </div>
+  </div>
+
+  <!-- MINI TAP GAME -->
+  <div id="miniGame" class="hidden">
+    <h2>💥 Mini Tap Challenge!</h2>
+    <p>Tap the button as fast as you can!</p>
+    <button id="tapButton">Tap me!</button>
+    <p>Time left: <span id="tapTime">10</span>s</p>
+    <p>Score: <span id="tapScore">0</span></p>
+    <button onclick="endMiniGame()">Finish Mini Game</button>
+  </div>
+
+  <!-- LEVEL UP POPUP -->
+  <div id="levelUpBox" class="hidden">
+    <h2>🎉 Level Up!</h2>
+    <p id="newRank"></p>
+    <button onclick="closeLevelUp()">Continue</button>
+  </div>
+
+  <!-- LOSE POPUP -->
+  <div id="loseBox" class="hidden">
+    <h2>💀 You Lost</h2>
+    <p>Watch ads to continue or restart</p>
+    <button onclick="continueGame()">Watch Ads</button>
+    <button onclick="restartGame()">Restart</button>
+  </div>
+
+  <!-- DAILY REWARD -->
+  <div id="dailyReward" class="hidden">
+    <h2>🌟 Daily Reward!</h2>
+    <p>Come back every day to keep your streak!</p>
+    <p>Reward: 5 Bonus Points 🎉</p>
+    <button onclick="claimReward()">Claim</button>
+  </div>
+
+  <!-- PREMIUM -->
+  <div class="premium">
+    <h3>🎁 Premium Packages</h3>
+    <button onclick="buyPremium('10')">10 Extra Hints - $1</button>
+    <button onclick="buyPremium('50')">50 Extra Hints - $4</button>
+    <button onclick="buyPremium('100')">100 Extra Hints - $7</button>
+  </div>
+
+  <!-- LEADERBOARD -->
+  <div id="leaderboard" class="leaderboard">
+    <h2>🏆 Leaderboard</h2>
+    <div class="board">
+      <div class="boardHeader">
+        <span>Nickname</span>
+        <span>Rank</span>
+        <span>Level</span>
+        <span>Score</span>
+      </div>
+      <div id="boardContent"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- EMOTIONAL BACKGROUND MUSIC -->
+<audio id="bgMusic" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" autoplay loop></audio>
+
+<script src="script.js"></script>
+</body>
+</html

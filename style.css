@@ -1,0 +1,46 @@
+body { margin:0; font-family:Arial,sans-serif; background:#0a1a24; color:white; }
+.app { padding:20px; max-width:500px; margin:auto; text-align:center; }
+
+.header { margin-bottom:25px; }
+.title { display:flex; justify-content:center; align-items:center; gap:10px; }
+.icon { font-size:28px; }
+.rankIcon { font-size:24px; margin-left:5px; }
+.header h1 { font-size:34px; margin:0; color:#00ff99; }
+.tagline { font-size:14px; color:#ccc; margin-top:5px; }
+.note { font-size:13px; color:#ffcc00; margin-top:5px; }
+.streak { font-size:14px; color:#ff5555; margin-top:5px; }
+
+.status { display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:30px; font-size:14px; }
+
+.questionBox { margin-bottom:30px; }
+.challenge { font-weight:bold; color:#00ccff; margin-bottom:10px; }
+#question { margin-bottom:25px; line-height:1.6; }
+.answers { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+.answers button { padding:18px; font-size:16px; background:#102c3d; color:white; border:2px solid #00ff99; border-radius:10px; cursor:pointer; }
+.answers button.correct { background:#00ff99; color:black; }
+.answers button.wrong { background:#ff4444; color:white; }
+.answers button:active { opacity:0.7; transform:scale(1.05); transition:0.1s; }
+
+.hidden { display:none; }
+
+#miniGame, #levelUpBox, #loseBox, #dailyReward { position:fixed; top:30%; left:50%; transform:translate(-50%,-30%); background:#112233; padding:20px 30px; border-radius:12px; border:2px solid #00ff99; z-index:100; }
+#miniGame button, #levelUpBox button, #loseBox button, #dailyReward button { padding:10px 20px; margin:8px; font-size:14px; border-radius:8px; border:none; cursor:pointer; }
+#miniGame button { background:#00ff99; }
+#levelUpBox button { background:#00ff99; }
+#loseBox button:first-child { background:#00ff99; }
+#loseBox button:last-child { background:#ff4444; color:white; }
+#dailyReward { animation: fadeIn 0.8s ease; }
+@keyframes fadeIn { from {opacity:0; transform:scale(0.5);} to {opacity:1; transform:scale(1);} }
+
+.leaderboard { margin-top:40px; border:2px solid #00ff99; border-radius:12px; padding:15px; background:#112233; }
+.boardHeader { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; font-weight:bold; margin-bottom:10px; }
+.boardHeader span { text-align:center; }
+.boardRow { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; margin-bottom:5px; padding:5px 0; border-bottom:1px solid #00ff99; }
+.boardRow span { text-align:center; }
+.boardRow span:first-child { color:#00ff99; font-weight:bold; }
+.warning { color:#ff4444 !important; font-weight:bold; animation:flash 0.5s infinite alternate; }
+@keyframes flash { from {opacity:1;} to {opacity:0.3;} }
+
+.premium { margin-top:20px; }
+.premium button { margin:5px; background:#00ccff; border:none; color:#000; padding:10px 15px; border-radius:8px; cursor:pointer; }
+.premium button:hover { background:#00ff99; transform:scale(1.05); transition:0.2s; }
